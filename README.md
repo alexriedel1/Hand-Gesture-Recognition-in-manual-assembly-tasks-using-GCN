@@ -15,7 +15,7 @@ In this repository, the skeletal data is already extracted from the video data v
 Training the model can is done via [`train.py`](train.py) and training parameters (models, lr, bs, additional joints, etc.) are defined in [`config.py`](config.py). The training and validation split is defined in [`data/get_data_from_csv.py`](data/get_data_from_csv.py).
 
 
-To get the final results using 2s-AGCN from the paper, run [`eval.py`](eval.py) (either with the "Release" class or without, as defined in config.py `no_release`). 
+To get the final results using 2s-AGCN from the paper, run [`eval.py`](eval.py) (either with the "Release" class or without, as defined in [`config.py`](config.py) `no_release`). 
 
 To inference on an example video including visualization, run [`inference.py`](inference.py). 
 
