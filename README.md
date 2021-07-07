@@ -5,7 +5,7 @@ Make sure to have all the requirements installed via `pip install -r requirement
 
 # Data
 
-The 21 x-y-z key points from the training and validation data are already provided in this repository. For demo pruposes, run video2landmark.py that creates key points and their corresponding label from the video and annotation file in data/video_example. 
+In this repository, the skeletal data is already extracted from the video data via MediaPipe Hands in /data/graph_data. For demo pruposes, run video2landmark.py that creates key points and their corresponding label from the video and annotation file in data/video_example. 
 
 # Training & Testing
 
