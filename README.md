@@ -13,7 +13,7 @@ In this repository, the skeletal data is already extracted from the video data v
 
 Training the model can is done via train.py and training parameters (models, lr, bs, additional joints, etc.) are defined in config.py. The training and validation split is defined in data/get_data_from_csv.py.
 <p align="center">
-<img src="/imgs/grasp.png" width="75%" height="75%">
+<img src="/imgs/grasp.png" width="60%" height="60%">
 </p>
 To get the final results using 2s-AGCN from the paper, run eval.py (either with the "Release" class or without, as defined in config.py `no_release`). To inference on an example video including visualization, run inference.py. 
 
