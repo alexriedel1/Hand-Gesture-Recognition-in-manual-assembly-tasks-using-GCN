@@ -161,7 +161,7 @@ while cap.isOpened():
 
   i += 1
   cv2.imshow('MediaPipe Hands', numpy_image)
-  if cv2.waitKey(50) & 0xFF == 27:
+  if cv2.waitKey(1) & 0xFF == 27:
     break
 hands.close()
 cap.release()
