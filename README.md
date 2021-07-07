@@ -1,6 +1,6 @@
 # Hand Gesture Recognition in manual assembly tasks using GCN
 <p align="center">
-<img src="/imgs/structure.PNG" width="75%" height="75%">
+<img src="/imgs/structure.PNG" width="100%" height="100%">
 </p>
 
 This is the source code to the paper "Hand Gesture Recognition of Methods-Time Measurement-1 motions in manual assembly tasks using Graph Convolutional Networks".
