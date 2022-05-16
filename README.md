@@ -5,6 +5,20 @@
 
 This is the source code to the paper ["Hand Gesture Recognition of Methods-Time Measurement-1 motions in manual assembly tasks using Graph Convolutional Networks"](https://www.tandfonline.com/doi/full/10.1080/08839514.2021.2014191).
 
+```
+@article{doi:10.1080/08839514.2021.2014191,
+author = {Alexander Riedel and Nico Brehm and Tobias Pfeifroth},
+title = {Hand Gesture Recognition of Methods-Time Measurement-1 Motions in Manual Assembly Tasks Using Graph Convolutional Networks},
+journal = {Applied Artificial Intelligence},
+volume = {0},
+number = {0},
+pages = {1-23},
+year  = {2021},
+publisher = {Taylor & Francis},
+doi = {10.1080/08839514.2021.2014191},
+URL = {https://doi.org/10.1080/08839514.2021.2014191}}
+```
+
 
 Make sure to have all the requirements installed via `pip install -r requirements.txt`. For working with all the models covered in the paper, install [Pytorch Geometric Temporal](https://pytorch-geometric-temporal.readthedocs.io/en/latest/notes/installation.html).
 
