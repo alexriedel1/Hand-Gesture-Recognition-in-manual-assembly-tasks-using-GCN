@@ -3,7 +3,8 @@
 <img src="/imgs/structure.PNG" width="100%" height="100%">
 </p>
 
-This is the source code to the paper "Hand Gesture Recognition of Methods-Time Measurement-1 motions in manual assembly tasks using Graph Convolutional Networks".
+This is the source code to the paper ["Hand Gesture Recognition of Methods-Time Measurement-1 motions in manual assembly tasks using Graph Convolutional Networks"](https://www.tandfonline.com/doi/full/10.1080/08839514.2021.2014191).
+
 
 Make sure to have all the requirements installed via `pip install -r requirements.txt`. For working with all the models covered in the paper, install [Pytorch Geometric Temporal](https://pytorch-geometric-temporal.readthedocs.io/en/latest/notes/installation.html).
 
