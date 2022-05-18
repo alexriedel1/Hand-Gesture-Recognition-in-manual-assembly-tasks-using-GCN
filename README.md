@@ -24,7 +24,10 @@ Make sure to have all the requirements installed via `pip install -r requirement
 
 # Data
 
-In this repository, the skeletal data is already extracted from the video data via MediaPipe Hands in [`/data/graphdata`](/data/graphdata). For demo pruposes, you can run [`utils/video2landmark.py`](utils/video2landmark.py) to create key points and their corresponding label from the video and annotation file in [`data/video_example`](data/video_example). 
+In this repository, the skeletal data is already extracted from the video data via MediaPipe Hands in [`/data/graphdata`](/data/graphdata). For demo pruposes, you can run [`utils/video2landmark.py`](utils/video2landmark.py) to create key points and their corresponding label from the video and annotation file in [`data/video_example`](data/video_example).
+
+You'll find the complete dataset here: https://drive.google.com/open?id=1JVPoCJdb8SNbQFLQAc1zDo0EoM6EukEC&authuser=alex.riedel%40gmail.com&usp=drive_fs
+Each video corresponds to a .csv file containing the annotations (e.g. `0.csv`) and four .csv files containing the extracted hand keypoints in the original video, horizontally flipped video, vertically flipped video, and horizontally+vertically flipped video (=data augmentation!). 
 
 # Training & Testing
 
