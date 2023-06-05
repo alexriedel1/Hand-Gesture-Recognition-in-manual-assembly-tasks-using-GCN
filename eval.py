@@ -11,7 +11,8 @@ from torch.utils.tensorboard import SummaryWriter
 from sklearn.metrics import f1_score, accuracy_score
 from sklearn.metrics import classification_report
 from sklearn.utils import class_weight
-import sklearn
+from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
+import matplotlib.pyplot as plt
 
 from model import lstm, aagcn, stconv, SAM
 from data.handpose_dataset import HandPoseDatasetNumpy, df_to_numpy
@@ -104,7 +105,7 @@ test_loader_2 = DataLoader(test_set_2, batch_size=CFG.batch_size, drop_last=True
 graph = aagcn.Graph(adj_mat.num_node, adj_mat.self_link, adj_mat.inward, adj_mat.outward, adj_mat.neighbor)
 model_2 = aagcn.Model(num_class=CFG.num_classes, num_point=21, num_person=1, graph=graph, drop_out=0.5, in_channels=3)
 print(f"[INFO] TESTING ON {len(test_set_1)} DATAPOINTS")
-
+print(CFG.classes)
 if CFG.no_release:
     MODEL_PATH_1 =  os.path.join(curr_dir, "trained_models/1AAGCN_Focal_seqlen32_no_release_SAM_joints1_joints2_ori/f10.86875_valloss179.26463317871094_epoch17.pth")
     MODEL_PATH_2 =  os.path.join(curr_dir, "trained_models/6AAGCN_Focal_seqlen32_no_release_SAM_joints1_joints2_oridist/f10.8345518867924528_valloss234.12368774414062_epoch12.pth")
@@ -138,6 +139,31 @@ def train_eval():
     print(f"F1-VAL: {f1_val}")
     print(classification_report(gt_val_1, preds_val, target_names=CFG.classes, digits=4))
 
+    #change order of classes for nice confusion matrix plotting..
+    gt_val_1[gt_val_1==2] = -5
+    gt_val_1[gt_val_1==3] = 2
+    gt_val_1[gt_val_1==4] = 3
+    gt_val_1[gt_val_1==5] = 4
+    gt_val_1[gt_val_1==-5] = 5
+
+    preds_val[preds_val==2] = -5
+    preds_val[preds_val==3] = 2
+    preds_val[preds_val==4] = 3
+    preds_val[preds_val==5] = 4
+    preds_val[preds_val==-5] = 5
+    cm = confusion_matrix(gt_val_1, preds_val, normalize="true")
+    disp = ConfusionMatrixDisplay(confusion_matrix=cm,
+                                              #['Grasp', 'Move', 'Negative', 'Position', 'Reach', 'Release']
+                                display_labels=['Grasp', 'Move', 'Position', 'Reach', 'Release', 'Negative'],
+                                )
+    font = {
+        'family' : 'Times New Roman',
+        'size'   : 24
+    }
+    plt.rc('font', **font)
+    disp.plot()
+    disp.ax_.set(xlabel='Predicted', ylabel='True')
+    plt.show()
 
 if __name__ == "__main__":
     train_eval()
